@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -45,4 +45,12 @@ body {
 .login-container input[type="submit"]:hover {
     background-color: #f4f4f4;
     color: #000000;
+} */
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 145px;
 }

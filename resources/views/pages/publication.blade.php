@@ -3,11 +3,11 @@
 @section('template')
     <link rel="stylesheet" href="{{ asset('css/publication.css') }}" />
     <div class="publication">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Seu anúncio</h5>
-                    <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('house.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="type">Tipo de imóvel</label>

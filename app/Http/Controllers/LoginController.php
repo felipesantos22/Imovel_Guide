@@ -19,13 +19,33 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        $user = $this->user->create($request->all());
-        return $user;
+        $messages = [
+            'email.unique' => 'Email já cadastrado.',
+            'email.email' => 'Insira um email válido.',
+        ];
+
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+        ], $messages);
+
+        $data = $request->all();
+        $data['password'] = bcrypt($request->password);    
+        
+        $user = $this->user->create($data);    
+        
+        Auth::login($user);    
+        
+        return redirect()->route('home');
     }
 
     public function login()
     {
         return view('pages.login');
+    }
+
+    public function register()
+    {
+        return view('pages.register');
     }
 
     /**
@@ -45,7 +65,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Email ou senha inválidos.',
         ])->onlyInput('email');
     }
 

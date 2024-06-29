@@ -29,8 +29,7 @@
                         <a href="{{ route('login') }}" style="text-decoration: none; color: black;">Login</a>
                     </button>
                     <button type="button" class="btn btn-warning">
-                        {{-- <a href="{{ route('register') }}" style="text-decoration: none; color: black;">Sign-up</a> --}}
-                        <a href="" style="text-decoration: none; color: black;">Sign-up</a>
+                        <a href="{{ route('register') }}" style="text-decoration: none; color: black;">Sign-up</a>
                     </button>
                 @endauth
             </div>
