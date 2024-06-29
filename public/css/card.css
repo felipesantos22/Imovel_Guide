@@ -1,0 +1,9 @@
+.card-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    height: 180px;
+}
