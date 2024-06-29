@@ -11,30 +11,30 @@
                         @csrf
                         <div class="form-group">
                             <label for="type">Tipo de imóvel</label>
-                            <select class="form-select" aria-label="Default select example" id="type" name="type">
-                                <option selected disabled>Selecione:</option>
-                                <option value="Casa">Casa</option>
-                                <option value="Apartamento">Apartamento</option>
-                                <option value="Fazenda">Fazenda</option>
+                            <select class="form-select" aria-label="Default select example" id="state" name="state" required>
+                                {{-- <option selected disabled>Selecione:</option> --}}
+                                @foreach ($types as $type)
+                                    <option value="{{ $type }}">{{ $type }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="city">Cidade</label>
-                            <select class="form-select" aria-label="Default select example" id="city" name="city">
-                                <option selected disabled>Selecione:</option>
-                                <option value="São Paulo">São Paulo</option>
-                                <option value="São Bernardo">São Bernardo</option>
-                                <option value="Guarulhos">Guarulhos</option>
+                            <select class="form-select" aria-label="Default select example" id="state" name="state" required>
+                                {{-- <option selected disabled>Selecione:</option> --}}
+                                @foreach ($states as $state)
+                                    <option value="{{ $state }}">{{ $state }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="price">Preço</label>
-                            <input type="number" class="form-control" id="price" name="price" placeholder="199000"
-                                required>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="199.000"
+                                min="0" required>
                         </div>
                         <div class="form-group">
                             <label for="photo" class="form-label">Selecione a imagem</label>
-                            <input class="form-control" type="file" id="photo" name="photo">
+                            <input class="form-control" type="file" id="photo" name="photo" required>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary" style="margin-top: 10px">Enviar</button>
