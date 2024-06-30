@@ -18,21 +18,26 @@ class HouseController extends Controller
      * Display a listing of the resource.
      */
 
-     public function home(Request $request)
-     {
-         // Recupera o valor do parâmetro de ordenação da request (com valor padrão)
-         $sortOrder = $request->input('sort_order', 'asc'); // Valor padrão: 'asc'
-     
-         // Valida o valor de ordenação (asc ou desc)
-         if (!in_array($sortOrder, ['asc', 'desc'])) {
-             $sortOrder = 'asc';
-         }
-     
-         // Consulta casas aplicando a ordenação por preço
-         $houses = $this->house->orderBy('price', $sortOrder)->get();
-     
-         return view('pages.home', compact('houses'));
-     }
+    // public function home(Request $request)
+    // {
+    //     // Recupera o valor do parâmetro de ordenação da request (com valor padrão)
+    //     $sortOrder = $request->input('sort_order', 'asc'); // Valor padrão: 'asc'
+
+    //     // Valida o valor de ordenação (asc ou desc)
+    //     if (!in_array($sortOrder, ['asc', 'desc'])) {
+    //         $sortOrder = 'asc';
+    //     }
+
+    //     // Consulta casas aplicando a ordenação por preço
+    //     $houses = $this->house->orderBy('price', $sortOrder)->get();
+
+    //     return view('pages.home', compact('houses'));
+    // }
+    public function home()
+    {
+        $houses = $this->house->all();
+        return view('pages.home', compact('houses'));
+    }
 
     public function about()
     {

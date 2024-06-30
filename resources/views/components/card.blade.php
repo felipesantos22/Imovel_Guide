@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="{{ asset('css/card.css') }}" />
 
-<form action="{{ route('home') }}" method="GET">
+{{-- <form action="{{ route('home') }}" method="GET">
     <label for="sort_order">Ordenar por preço:</label>
     <select name="sort_order" id="sort_order" class="form-select form-select-sm" aria-label="Small select example">
         <option value="asc" {{ request('sort_order') == 'asc' ? 'selected' : '' }}>Menor para maior</option>
         <option value="desc" {{ request('sort_order') == 'desc' ? 'selected' : '' }}>Maior para menor</option>
     </select>
     <button type="submit" type="button" class="btn btn-dark">Ordenar</button>
-</form>
+</form> --}}
 
 <div class="container mt-5">
     <div class="row">

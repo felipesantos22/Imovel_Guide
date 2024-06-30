@@ -11,8 +11,9 @@
                         @csrf
                         <div class="form-group">
                             <label for="type">Tipo de imóvel</label>
-                            <select class="form-select" aria-label="Default select example" id="state" name="state" required>
-                                {{-- <option selected disabled>Selecione:</option> --}}
+                            <select class="form-select" aria-label="Default select example" id="type" name="type"
+                                required>
+                                <option selected disabled>Selecione:</option>
                                 @foreach ($types as $type)
                                     <option value="{{ $type }}">{{ $type }}</option>
                                 @endforeach
@@ -20,8 +21,9 @@
                         </div>
                         <div class="form-group">
                             <label for="city">Cidade</label>
-                            <select class="form-select" aria-label="Default select example" id="state" name="state" required>
-                                {{-- <option selected disabled>Selecione:</option> --}}
+                            <select class="form-select" aria-label="Default select example" id="city" name="city"
+                                required>
+                                <option selected disabled>Selecione:</option>
                                 @foreach ($states as $state)
                                     <option value="{{ $state }}">{{ $state }}</option>
                                 @endforeach
