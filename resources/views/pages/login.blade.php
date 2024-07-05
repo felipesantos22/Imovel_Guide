@@ -41,7 +41,11 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="password">
                         </div>
-                        <button type="submit" class="btn btn-primary" style="margin-top: 10px">Entrar</button>
+                        <button type="submit" class="btn btn-dark" style="margin-top: 10px">Entrar</button>
+                        <div style="margin-top: 10px">
+                            <a href="/auth/redirect" style="color:black"><i class="bi bi-github"
+                                    style="font-size: 2rem;"></i></a>
+                        </div>
                     </form>
                     <br>
                     @if ($errors->any())
